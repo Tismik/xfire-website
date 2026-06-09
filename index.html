@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>XFire SRL — Belgian Software Company</title>
+  <title data-i18n="page.title">XFire SRL — Belgian Software Company</title>
   <meta name="description" content="XFire SRL is a Belgian software company (BE 0715.981.744) developing software products for independent professionals and small businesses.">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -45,6 +45,7 @@
       align-items: center;
       justify-content: space-between;
       height: 64px;
+      gap: 16px;
     }
 
     .logo {
@@ -78,11 +79,40 @@
       letter-spacing: -0.01em;
     }
 
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
     .header-tag {
       font-size: 0.82rem;
       color: var(--text-muted);
       font-weight: 500;
     }
+
+    /* ── LANG TOGGLE ── */
+    .lang-toggle {
+      display: inline-flex;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .lang-toggle button {
+      background: transparent;
+      color: var(--text-muted);
+      border: none;
+      padding: 5px 10px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+      font-family: inherit;
+    }
+
+    .lang-toggle button:hover { color: var(--text); }
+    .lang-toggle button.active { background: var(--blue); color: #fff; }
 
     /* ── MAIN ── */
     main {
@@ -107,7 +137,6 @@
     }
 
     .hero .tagline {
-      font-size: 1rem;
       color: var(--text-muted);
       font-weight: 500;
       margin-bottom: 32px;
@@ -135,9 +164,7 @@
       color: var(--text-muted);
     }
 
-    .contact-line a {
-      font-weight: 500;
-    }
+    .contact-line a { font-weight: 500; }
 
     /* ── LEGAL BLOCK ── */
     .legal-block {
@@ -204,6 +231,7 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
+      .header-tag { display: none; }
       main { padding: 48px 20px 60px; }
       .hero { margin-bottom: 40px; padding-bottom: 40px; }
       .hero h1 { font-size: 1.6rem; }
@@ -226,21 +254,28 @@
         </div>
         <span class="logo-name">XFire SRL</span>
       </a>
-      <span class="header-tag">Belgian software company</span>
+      <div class="header-right">
+        <span class="header-tag" data-i18n="header.tag">Belgian software company</span>
+        <div class="lang-toggle">
+          <button data-lang-btn="en">EN</button>
+          <button data-lang-btn="fr">FR</button>
+          <button data-lang-btn="nl">NL</button>
+        </div>
+      </div>
     </div>
   </header>
 
   <main>
 
     <section class="hero">
-      <p class="tagline">About us</p>
+      <p class="tagline" data-i18n="hero.tagline">About us</p>
       <h1>XFire SRL</h1>
 
-      <p>XFire SRL is a Belgian limited liability company (SRL) registered under enterprise number <strong>BE 0715.981.744</strong>.</p>
+      <p data-i18n="hero.p1">XFire SRL is a Belgian limited liability company (SRL) registered under enterprise number <strong>BE 0715.981.744</strong>.</p>
 
-      <p>We design and develop software products for independent professionals and small businesses.</p>
+      <p data-i18n="hero.p2">We design and develop software products for independent professionals and small businesses.</p>
 
-      <p>Our flagship product is <a href="https://serenityapp.be"><strong>Serenity</strong></a> — a voice-first assistant for tradespeople and entrepreneurs. Serenity transcribes voicemails, organises client requests and manages scheduling, so professionals can focus on their work.</p>
+      <p data-i18n="hero.p3">Our flagship product is <a href="https://serenityapp.be"><strong>Serenity</strong></a> — a voice-first assistant for tradespeople and entrepreneurs. Serenity transcribes voicemails, organises client requests and manages scheduling, so professionals can focus on their work.</p>
 
       <div class="contact-line">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
@@ -249,21 +284,21 @@
     </section>
 
     <div class="legal-block">
-      <h2>Legal information</h2>
+      <h2 data-i18n="legal.title">Legal information</h2>
       <dl class="legal-grid">
-        <dt>Full legal name</dt>
+        <dt data-i18n="legal.name">Full legal name</dt>
         <dd>XFire SRL</dd>
 
-        <dt>Enterprise number</dt>
+        <dt data-i18n="legal.number">Enterprise number</dt>
         <dd>BE 0715.981.744</dd>
 
-        <dt>Legal form</dt>
-        <dd>SRL — Société à Responsabilité Limitée (Belgian LLC)</dd>
+        <dt data-i18n="legal.form">Legal form</dt>
+        <dd data-i18n="legal.form.value">SRL — Société à Responsabilité Limitée (Belgian LLC)</dd>
 
-        <dt>Registered in</dt>
-        <dd>Belgium</dd>
+        <dt data-i18n="legal.country">Registered in</dt>
+        <dd data-i18n="legal.country.value">Belgium</dd>
 
-        <dt>Official product website</dt>
+        <dt data-i18n="legal.website">Official product website</dt>
         <dd><a href="https://serenityapp.be">https://serenityapp.be</a></dd>
       </dl>
     </div>
@@ -276,6 +311,92 @@
       <a href="https://serenityapp.be" class="footer-link">serenityapp.be</a>
     </div>
   </footer>
+
+  <script>
+    const I18N = {
+      en: {
+        'page.title': 'XFire SRL — Belgian Software Company',
+        'header.tag': 'Belgian software company',
+        'hero.tagline': 'About us',
+        'hero.p1': 'XFire SRL is a Belgian limited liability company (SRL) registered under enterprise number <strong>BE 0715.981.744</strong>.',
+        'hero.p2': 'We design and develop software products for independent professionals and small businesses.',
+        'hero.p3': 'Our flagship product is <a href="https://serenityapp.be"><strong>Serenity</strong></a> — a voice-first assistant for tradespeople and entrepreneurs. Serenity transcribes voicemails, organises client requests and manages scheduling, so professionals can focus on their work.',
+        'legal.title': 'Legal information',
+        'legal.name': 'Full legal name',
+        'legal.number': 'Enterprise number',
+        'legal.form': 'Legal form',
+        'legal.form.value': 'SRL — Société à Responsabilité Limitée (Belgian LLC)',
+        'legal.country': 'Registered in',
+        'legal.country.value': 'Belgium',
+        'legal.website': 'Official product website',
+      },
+      fr: {
+        'page.title': 'XFire SRL — Société de logiciels belge',
+        'header.tag': 'Société de logiciels belge',
+        'hero.tagline': 'À propos',
+        'hero.p1': 'XFire SRL est une société à responsabilité limitée de droit belge, enregistrée sous le numéro d\'entreprise <strong>BE 0715.981.744</strong>.',
+        'hero.p2': 'Nous concevons et développons des logiciels pour les indépendants et les petites entreprises.',
+        'hero.p3': 'Notre produit phare est <a href="https://serenityapp.be"><strong>Serenity</strong></a> — un assistant vocal pour les artisans et entrepreneurs. Serenity transcrit les messages vocaux, organise les demandes clients et gère le planning, afin que les professionnels puissent se concentrer sur leur travail.',
+        'legal.title': 'Informations légales',
+        'legal.name': 'Dénomination sociale',
+        'legal.number': 'Numéro d\'entreprise',
+        'legal.form': 'Forme juridique',
+        'legal.form.value': 'SRL — Société à Responsabilité Limitée',
+        'legal.country': 'Pays d\'enregistrement',
+        'legal.country.value': 'Belgique',
+        'legal.website': 'Site web officiel du produit',
+      },
+      nl: {
+        'page.title': 'XFire SRL — Belgisch softwarebedrijf',
+        'header.tag': 'Belgisch softwarebedrijf',
+        'hero.tagline': 'Over ons',
+        'hero.p1': 'XFire SRL is een Belgische besloten vennootschap (BV/SRL), geregistreerd onder ondernemingsnummer <strong>BE 0715.981.744</strong>.',
+        'hero.p2': 'Wij ontwerpen en ontwikkelen softwareproducten voor zelfstandigen en kleine ondernemingen.',
+        'hero.p3': 'Ons vlaggenschipproduct is <a href="https://serenityapp.be"><strong>Serenity</strong></a> — een spraakassistent voor vaklui en ondernemers. Serenity transcribeert voicemails, organiseert klantvragen en beheert de planning, zodat professionals zich op hun werk kunnen concentreren.',
+        'legal.title': 'Juridische informatie',
+        'legal.name': 'Volledige naam',
+        'legal.number': 'Ondernemingsnummer',
+        'legal.form': 'Rechtsvorm',
+        'legal.form.value': 'SRL — Besloten Vennootschap (Belgische BV)',
+        'legal.country': 'Geregistreerd in',
+        'legal.country.value': 'België',
+        'legal.website': 'Officiële productwebsite',
+      },
+    };
+
+    const SUPPORTED = ['en', 'fr', 'nl'];
+
+    function applyLang(lang) {
+      const dict = I18N[lang] || I18N.en;
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const v = dict[el.dataset.i18n];
+        if (v != null) el.innerHTML = v;
+      });
+      document.querySelectorAll('[data-lang-btn]').forEach(b => {
+        b.classList.toggle('active', b.dataset.langBtn === lang);
+      });
+      if (dict['page.title']) document.title = dict['page.title'];
+      try { localStorage.setItem('xfire_lang', lang); } catch (e) {}
+    }
+
+    let initial = 'en';
+    try {
+      const saved = localStorage.getItem('xfire_lang');
+      if (SUPPORTED.includes(saved)) {
+        initial = saved;
+      } else {
+        const nav = (navigator.language || '').slice(0, 2).toLowerCase();
+        if (SUPPORTED.includes(nav)) initial = nav;
+      }
+    } catch (e) {}
+
+    document.querySelectorAll('[data-lang-btn]').forEach(b => {
+      b.addEventListener('click', () => applyLang(b.dataset.langBtn));
+    });
+
+    applyLang(initial);
+  </script>
 
 </body>
 </html>
