@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="page.title">Serenity — Voice Assistant for Tradespeople | XFire SRL</title>
+  <meta name="description" content="Serenity is XFire SRL's flagship product: an intelligent voicemail for tradespeople, transcribing calls and organizing client requests. iOS &amp; Android.">
+  <link rel="canonical" href="https://xfiresrl.com/serenity/">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="XFire SRL">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Serenity — Voice Assistant for Tradespeople | XFire SRL">
+  <meta property="og:description" content="Serenity is XFire SRL's flagship product: an intelligent voicemail for tradespeople, transcribing calls and organizing client requests. iOS &amp; Android.">
+  <meta property="og:url" content="https://xfiresrl.com/serenity/">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Serenity — Voice Assistant for Tradespeople | XFire SRL">
+  <meta name="twitter:description" content="Serenity is XFire SRL's flagship product: an intelligent voicemail for tradespeople, transcribing calls and organizing client requests. iOS &amp; Android.">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Serenity",
+    "url": "https://xfiresrl.com/serenity/",
+    "description": "Serenity is XFire SRL's flagship product: an intelligent voicemail for tradespeople, transcribing calls and organizing client requests.",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "XFire SRL", "item": "https://xfiresrl.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Serenity", "item": "https://xfiresrl.com/serenity/" }
+      ]
+    },
+    "about": {
+      "@type": "SoftwareApplication",
+      "name": "Serenity",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "iOS, Android",
+      "url": "https://serenityapp.be",
+      "publisher": {
+        "@type": "Organization",
+        "name": "XFire SRL",
+        "url": "https://xfiresrl.com"
+      }
+    }
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue: #1a3a6b;
+      --blue-light: #2a5298;
+      --text: #1a1a2e;
+      --text-muted: #5a6478;
+      --border: #dde2ea;
+      --bg: #ffffff;
+      --bg-subtle: #f7f9fc;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--blue-light); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── HEADER ── */
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+    }
+
+    .header-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      gap: 16px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo-mark {
+      width: 32px;
+      height: 32px;
+      background: var(--blue);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .logo-mark svg {
+      width: 18px;
+      height: 18px;
+      fill: #fff;
+    }
+
+    .logo-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .header-tag {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* ── LANG TOGGLE ── */
+    .lang-toggle {
+      display: inline-flex;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .lang-toggle button {
+      background: transparent;
+      color: var(--text-muted);
+      border: none;
+      padding: 5px 10px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+      font-family: inherit;
+    }
+
+    .lang-toggle button:hover { color: var(--text); }
+    .lang-toggle button.active { background: var(--blue); color: #fff; }
+
+    /* ── MAIN ── */
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 72px 24px 80px;
+    }
+
+    .hero {
+      margin-bottom: 48px;
+    }
+
+    .hero .tagline {
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-size: 0.8rem;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: #374151;
+      max-width: 620px;
+      margin-bottom: 16px;
+      line-height: 1.75;
+    }
+
+    .hero p:last-of-type { margin-bottom: 0; }
+
+    /* ── CTA ── */
+    .cta-row {
+      margin-top: 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--blue);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+
+    .btn-primary:hover {
+      background: var(--blue-light);
+      text-decoration: none;
+    }
+
+    .cta-url {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* ── FEATURES ── */
+    .features {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 32px 36px;
+      margin: 56px 0;
+    }
+
+    .features h2 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--blue);
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .features ul {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+    }
+
+    .features li {
+      font-size: 0.95rem;
+      color: var(--text);
+      padding-left: 28px;
+      position: relative;
+    }
+
+    .features li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--blue-light);
+      font-weight: 700;
+    }
+
+    /* ── PUBLISHER NOTE ── */
+    .publisher-note {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+    }
+
+    .publisher-note a { font-weight: 600; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px;
+    }
+
+    .footer-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .footer-copy {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .footer-link {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .header-tag { display: none; }
+      main { padding: 48px 20px 60px; }
+      .hero h1 { font-size: 1.8rem; }
+      .features { padding: 24px 20px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-mark">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+          </svg>
+        </div>
+        <span class="logo-name">XFire SRL</span>
+      </a>
+      <div class="header-right">
+        <span class="header-tag" data-i18n="header.tag">Flagship product</span>
+        <div class="lang-toggle">
+          <button data-lang-btn="en">EN</button>
+          <button data-lang-btn="fr">FR</button>
+          <button data-lang-btn="nl">NL</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <p class="tagline" data-i18n="hero.tagline">Our flagship product</p>
+      <h1>Serenity</h1>
+
+      <p data-i18n="hero.p1">Serenity is a voice-first assistant built by XFire SRL for tradespeople, freelancers and small business owners. When a client calls and you can't answer, Serenity picks up the message, transcribes it, summarises it and organises it automatically.</p>
+
+      <p data-i18n="hero.p2">No more missed calls turning into lost clients. Every voicemail becomes a clear, actionable request — sorted by urgency, ready to act on from the app.</p>
+
+      <p data-i18n="hero.p3">Serenity is available on iOS and Android, with a free trial and no setup required.</p>
+
+      <div class="cta-row">
+        <a href="https://serenityapp.be" class="btn-primary" target="_blank" rel="noopener" data-i18n="cta.btn">Discover Serenity →</a>
+        <span class="cta-url">serenityapp.be</span>
+      </div>
+    </section>
+
+    <div class="features">
+      <h2 data-i18n="features.title">What Serenity does</h2>
+      <ul>
+        <li data-i18n="features.f1">Transcribes voicemails and calls into clear text</li>
+        <li data-i18n="features.f2">Automatically organises and prioritises client requests</li>
+        <li data-i18n="features.f3">Syncs with your calendar to plan appointments</li>
+      </ul>
+    </div>
+
+    <p class="publisher-note" data-i18n="publisher.note">Serenity is developed and published by <strong>XFire SRL</strong> (BE 0715.981.744), a Belgian software company. Learn more on <a href="https://serenityapp.be" target="_blank" rel="noopener">serenityapp.be</a>.</p>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-copy">© 2026 XFire SRL — BE 0715.981.744</span>
+      <a href="https://serenityapp.be" class="footer-link" target="_blank" rel="noopener">serenityapp.be</a>
+    </div>
+  </footer>
+
+  <script>
+    const I18N = {
+      en: {
+        'page.title': 'Serenity — Voice Assistant for Tradespeople | XFire SRL',
+        'header.tag': 'Flagship product',
+        'hero.tagline': 'Our flagship product',
+        'hero.p1': "Serenity is a voice-first assistant built by XFire SRL for tradespeople, freelancers and small business owners. When a client calls and you can't answer, Serenity picks up the message, transcribes it, summarises it and organises it automatically.",
+        'hero.p2': 'No more missed calls turning into lost clients. Every voicemail becomes a clear, actionable request — sorted by urgency, ready to act on from the app.',
+        'hero.p3': 'Serenity is available on iOS and Android, with a free trial and no setup required.',
+        'cta.btn': 'Discover Serenity →',
+        'features.title': 'What Serenity does',
+        'features.f1': 'Transcribes voicemails and calls into clear text',
+        'features.f2': 'Automatically organises and prioritises client requests',
+        'features.f3': 'Syncs with your calendar to plan appointments',
+        'publisher.note': 'Serenity is developed and published by <strong>XFire SRL</strong> (BE 0715.981.744), a Belgian software company. Learn more on <a href="https://serenityapp.be" target="_blank" rel="noopener">serenityapp.be</a>.',
+      },
+      fr: {
+        'page.title': 'Serenity — Messagerie vocale intelligente | XFire SRL',
+        'header.tag': 'Produit phare',
+        'hero.tagline': 'Notre produit phare',
+        'hero.p1': "Serenity est l'assistant vocal développé par XFire SRL pour les artisans, indépendants et petites entreprises. Quand un client appelle et que vous ne pouvez pas répondre, Serenity capte le message, le transcrit, le résume et l'organise automatiquement.",
+        'hero.p2': "Plus aucun appel manqué ne se transforme en client perdu. Chaque message vocal devient une demande claire et exploitable, triée par urgence, directement dans l'application.",
+        'hero.p3': 'Serenity est disponible sur iOS et Android, avec un essai gratuit et sans installation.',
+        'cta.btn': 'Découvrir Serenity →',
+        'features.title': 'Ce que fait Serenity',
+        'features.f1': 'Transcrit les messages vocaux et appels en texte clair',
+        'features.f2': 'Organise et priorise automatiquement les demandes clients',
+        'features.f3': "Se synchronise avec l'agenda pour planifier les rendez-vous",
+        'publisher.note': 'Serenity est développé et édité par <strong>XFire SRL</strong> (BE 0715.981.744), société de logiciels belge. Plus d\'informations sur <a href="https://serenityapp.be" target="_blank" rel="noopener">serenityapp.be</a>.',
+      },
+      nl: {
+        'page.title': 'Serenity — Slimme voicemail voor vaklui | XFire SRL',
+        'header.tag': 'Vlaggenschipproduct',
+        'hero.tagline': 'Ons vlaggenschipproduct',
+        'hero.p1': 'Serenity is de spraakassistent van XFire SRL voor vaklui, zelfstandigen en kleine ondernemingen. Wanneer een klant belt en u niet kunt opnemen, vangt Serenity het bericht op, zet het om in tekst, vat het samen en organiseert het automatisch.',
+        'hero.p2': 'Geen gemiste oproep wordt nog een verloren klant. Elk voicemailbericht wordt een duidelijke, uitvoerbare aanvraag — gesorteerd op urgentie, klaar in de app.',
+        'hero.p3': 'Serenity is beschikbaar op iOS en Android, met een gratis proefperiode en zonder installatie.',
+        'cta.btn': 'Ontdek Serenity →',
+        'features.title': 'Wat Serenity doet',
+        'features.f1': 'Transcribeert voicemails en oproepen naar duidelijke tekst',
+        'features.f2': 'Organiseert en prioriteert klantaanvragen automatisch',
+        'features.f3': 'Synchroniseert met uw agenda om afspraken te plannen',
+        'publisher.note': 'Serenity is ontwikkeld en uitgegeven door <strong>XFire SRL</strong> (BE 0715.981.744), een Belgisch softwarebedrijf. Meer info op <a href="https://serenityapp.be" target="_blank" rel="noopener">serenityapp.be</a>.',
+      },
+    };
+
+    const SUPPORTED = ['en', 'fr', 'nl'];
+
+    function applyLang(lang) {
+      const dict = I18N[lang] || I18N.en;
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const v = dict[el.dataset.i18n];
+        if (v != null) el.innerHTML = v;
+      });
+      document.querySelectorAll('[data-lang-btn]').forEach(b => {
+        b.classList.toggle('active', b.dataset.langBtn === lang);
+      });
+      if (dict['page.title']) document.title = dict['page.title'];
+      try { localStorage.setItem('xfire_lang', lang); } catch (e) {}
+    }
+
+    let initial = 'en';
+    try {
+      const saved = localStorage.getItem('xfire_lang');
+      if (SUPPORTED.includes(saved)) initial = saved;
+    } catch (e) {}
+
+    document.querySelectorAll('[data-lang-btn]').forEach(b => {
+      b.addEventListener('click', () => applyLang(b.dataset.langBtn));
+    });
+
+    applyLang(initial);
+  </script>
+
+</body>
+</html>
